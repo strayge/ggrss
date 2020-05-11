@@ -1,0 +1,16 @@
+version: '2.1'
+
+services:
+
+  rss:
+    build: .
+    container_name: ggstats_rss
+    hostname: ggstats_rss
+    logging:
+      options:
+        max-size: "3m"
+        max-file: "2"
+    command: python3 main.py
+    volumes:
+      - ./src:/src
+      - ./data:/data
